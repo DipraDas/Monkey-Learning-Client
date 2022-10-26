@@ -6,7 +6,7 @@ import logo from '../../../assets/logo.png';
 
 const Login = () => {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center' }} className="mt-16">
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }} className="mt-16">
             <div style={{ marginLeft: '30px' }} className="card card-compact w-96 bg-base-100 shadow-xl  py-5">
                 <div className="card-body">
                     <img style={{ width: '40px' }} src={logo} alt="Shoes" />
@@ -20,8 +20,8 @@ const Login = () => {
                         <button className="btn btn-primary btn-block mt-5">Sign In</button>
                     </div>
                     <div className="googleGithub flex justify-between">
-                        <div className='w-2/4 mr-2'><button className="btn btn-outline btn-block mt-1"><FaGoogle></FaGoogle></button></div>
-                        <div className='w-2/4 ml-2'><button className="btn btn-outline btn-block mt-1"> <FaGithub></FaGithub></button></div>
+                        <div className='w-2/4 mr-2'><button className="btn btn-outline btn-block mt-1"><FaGoogle style={{fontSize: '20px'}}></FaGoogle></button></div>
+                        <div className='w-2/4 ml-2'><button className="btn btn-outline btn-block mt-1"> <FaGithub style={{fontSize: '24px'}}></FaGithub></button></div>
                     </div>
                 </div>
             </div>

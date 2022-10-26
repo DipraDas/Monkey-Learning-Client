@@ -4,7 +4,7 @@ import logo from '../../../assets/logo.png';
 
 const Register = () => {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center' }} className="mt-16">
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }} className="mt-16">
             <div style={{ marginLeft: '30px' }} className="card card-compact w-96 bg-base-100 shadow-xl  py-5">
                 <div className="card-body">
                     <img style={{ width: '40px' }} src={logo} alt="Shoes" />
