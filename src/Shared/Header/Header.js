@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/logo.png';
+import { FaUserAlt } from 'react-icons/fa';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error('error', error))
+    }
     return (
         <div >
             <div style={{ backgroundColor: '#000033' }} className="navbar bg-neutral text-neutral-content">
@@ -30,8 +38,31 @@ const Header = () => {
                         <li><Link to='/faq'>Faq</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end pr-7">
-                    <Link to='/login'><button className='btn btn-ghost'>Login</button></Link>
+                <div className="navbar-end">
+                    {
+                        user?.uid ?
+                            <>
+                                {/* <Link href="#deets">{user?.displayName}</Link> */}
+                                <div>
+                                    {
+                                        user?.photoURL ?
+                                            <div title={user.displayName} className="avatar ">
+                                                <div className="w-8 rounded-full">
+                                                    <img src={user?.photoURL} alt="Tailwind-CSS-Avatar-component" />
+                                                </div>
+                                            </div>
+                                            :
+                                            <FaUserAlt title={user.displayName} />
+                                    }
+                                </div>
+                                <button className='btn btn-error btn-sm my-2 mr-8 ml-5' onClick={handleLogOut} variant="primary">Log out</button>
+                            </>                            
+                            :
+                            <>
+                                <Link className='text-light mr-6' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
+                            </>
+                    }
+
                 </div>
             </div>
         </div>

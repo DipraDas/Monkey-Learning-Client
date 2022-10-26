@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const hlo = event => {
+    const { signIn } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const nevigate = useNavigate();
+
+    const handleSubmit = event => {
         event.preventDefault();
-        console.log('grg');
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(email, password);
+        setError('');
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                nevigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.error('error', error);
+                setError(error.message);
+            })
     }
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }} className="mt-16">
@@ -16,13 +40,13 @@ const Login = () => {
                     <img style={{ width: '40px' }} src={logo} alt="Shoes" />
                     <h1 style={{ fontSize: '35px', marginTop: '10px' }} className="card-title">Sign In</h1>
                     <p>Do you have an account? <Link className='text-blue-600 underline font-semibold' to='/register'>Register</Link> </p>
-                    <form>
+                    <form onSubmit={handleSubmit} >
                         <label className='mt-3' htmlFor="">Email</label><br />
-                        <input type="email" placeholder="Enter your email" className="input input-bordered w-full" /><br />
+                        <input name='email' type="email" placeholder="Enter your email" className="input input-bordered w-full" /><br />
                         <label className='mt-2' htmlFor="">Password</label><br />
-                        <input type="email" placeholder="Enter your password" className="input input-bordered w-full" />
+                        <input name='password' type="password" placeholder="Enter your password" className="input input-bordered w-full" />
                         <div className="card-actions">
-                            <button onSubmit={hlo} className="btn btn-primary btn-block mt-5">Sign In</button>
+                            <button className="btn btn-primary btn-block mt-5">Sign In</button>
                         </div>
                     </form>
                     <div className="googleGithub flex justify-between">
