@@ -5,9 +5,12 @@ import Course from "../../Pages/Course/Course";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses";
 import Faq from "../../Pages/Faq/Faq";
+import GetPremiumAccess from "../../Pages/GetPremiumAccess/GetPremiumAccess";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import NotFound from "../../Pages/NotFound/NotFound";
+import PrivateRoutes from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -34,6 +37,11 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
             {
+                path: '/premiumAccess/:id',
+                element: <PrivateRoutes><GetPremiumAccess></GetPremiumAccess></PrivateRoutes>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            {
                 path: '/blogs',
                 element: <Blog></Blog>
             },
@@ -49,6 +57,10 @@ export const routes = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
             },
-        ]
-    }
+        ],
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
+    },
 ])

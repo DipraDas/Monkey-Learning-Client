@@ -10,11 +10,11 @@ const AsideNav = () => {
             .then(data => setCourses(data))
     }, [])
     return (
-        <div>
-            <h4 className='d-none d-lg-block'>Total Categories: {courses.length} </h4>
+        <div className='text-center bg-gray-100 py-10 rounded-2xl'>
+            <h4 className='d-none d-lg-block font-semibold text-3xl text-blue-900 mb-6'>Courses</h4>
             <div>
                 {
-                    courses.map(course => <p key={course._id}>
+                    courses.map(course => <p className='text-xl mb-5' key={course._id}>
                         <Link to={`/course/${course._id}`}>{course.title}</Link>
                     </p>
                     )

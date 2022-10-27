@@ -21,6 +21,9 @@ const CourseDetails = () => {
                 <div className='px-10 py-10'>
                     <h2 className='text-3xl font-medium text-gray-800 mb-3'>Description</h2>
                     <p className='text-justify tracking-wide text-lg  text-gray-600 leading-8'>{description}</p>
+                    <div className='mx-auto text-center my-5'>
+                        <Link className='btn btn-success text-slate-50 ' to={`/premiumAccess/${_id}`}> Enroll Now</Link>
+                    </div>
                     <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 bg-gray-300 mt-5 p-6 rounded-lg">
                         <div className='pb-3'>
                             <h2 className='text-xl font-medium text-gray-800 pt-3 mb-3'>What Includes?</h2>
@@ -54,6 +57,7 @@ const CourseDetails = () => {
                         {({ toPdf }) => <button onClick={toPdf} className="btn btn-active btn-primary text-center">Download PDF</button>}
                     </Pdf>
                 </div>
+
             </div>
         </div>
     );
