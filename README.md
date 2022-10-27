@@ -4,14 +4,14 @@ This is a Learning Website where you can purchase your favourite courses and mak
 
 ## Technologies Used Here
 
-#### React
-#### React-Router-Dom
-#### React-Icons
-#### React to PDF Package
-#### React Tailwind
-#### DaisyUI
-#### Firebase
-#### Express
+- React
+- React-Router-Dom
+- React-Icons
+- React to PDF Package
+- React Tailwind
+- DaisyUI
+- Firebase
+- Express
 
 
 ## Features
