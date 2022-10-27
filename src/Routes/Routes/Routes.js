@@ -24,22 +24,22 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://server-sigma-nine.vercel.app/courses')
             },
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://server-sigma-nine.vercel.app/course')
             },
             {
                 path: '/course/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-sigma-nine.vercel.app/course/${params.id}`)
             },
             {
                 path: '/premiumAccess/:id',
                 element: <PrivateRoutes><GetPremiumAccess></GetPremiumAccess></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-sigma-nine.vercel.app/course/${params.id}`)
             },
             {
                 path: '/blogs',

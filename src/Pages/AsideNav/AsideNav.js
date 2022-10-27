@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const AsideNav = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://server-sigma-nine.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
