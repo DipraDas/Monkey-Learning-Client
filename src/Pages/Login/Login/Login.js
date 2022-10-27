@@ -44,7 +44,7 @@ const Login = () => {
     }
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }} className="mt-16">
-            <div style={{ marginLeft: '30px' }} className="card card-compact w-96 bg-base-100 shadow-xl  py-5">
+            <div className="card card-compact w-96 bg-base-100 shadow-xl  py-5">
                 <div className="card-body">
                     <img style={{ width: '40px' }} src={logo} alt="Shoes" />
                     <h1 style={{ fontSize: '35px', marginTop: '10px' }} className="card-title">Sign In</h1>

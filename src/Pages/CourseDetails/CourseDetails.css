@@ -1,0 +1,8 @@
+.back{
+    background-image: url('../../../src/assets/back.jpg');
+    height: 400px;
+    background-position: top;
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+}

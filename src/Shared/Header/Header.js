@@ -56,10 +56,10 @@ const Header = () => {
                                     }
                                 </div>
                                 <button className='btn btn-error btn-sm my-2 mr-8 ml-5' onClick={handleLogOut} variant="primary">Log out</button>
-                            </>                            
+                            </>
                             :
                             <>
-                                <Link className='text-light mr-6' to='/login'><button className='btn btn-bg mr-2 my-2' variant="primary">Log in</button></Link>
+                                <Link className='text-light mr-6' to='/login'><button className='btn btn-sm my-2  btn-outline btn-accent' variant="primary">Log in</button></Link>
                             </>
                     }
 
