@@ -10,7 +10,7 @@ const AsideNav = () => {
             .then(data => setCourses(data))
     }, [])
     return (
-        <div className='text-center bg-gray-100 py-10 rounded-2xl'>
+        <div className='text-center bg-gray-200 py-10 rounded-2xl shadow-xl'>
             <h4 className='d-none d-lg-block font-semibold text-3xl text-blue-900 mb-6'>Courses</h4>
             <div>
                 {

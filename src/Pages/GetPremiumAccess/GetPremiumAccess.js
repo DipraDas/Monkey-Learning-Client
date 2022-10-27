@@ -7,7 +7,7 @@ const GetPremiumAccess = () => {
     return (
         <div className='flex justify-center py-20 bg-gray-100'>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <figure style={{ backgroundColor: '#000033' }} className='text-white py-16 text-6xl font-semibold'>${price}</figure>
+                <figure style={{ backgroundColor: '#000033' }} className='text-white py-16 text-6xl font-semibold'>$<span className='text-blue-500'>{price}</span></figure>
                 <div className="card-body">
                     <h2 className="card-title">Course Name: {title}</h2>
                     <p>

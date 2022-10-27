@@ -4,6 +4,7 @@ import './Header.css';
 import logo from '../../assets/logo.png';
 import { FaUserAlt } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Toggle from '../../Pages/Toggle/Toggle';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -38,6 +39,7 @@ const Header = () => {
                         <li><Link to='/faq'>Faq</Link></li>
                     </ul>
                 </div>
+                <Toggle></Toggle>
                 <div className="navbar-end">
                     {
                         user?.uid ?

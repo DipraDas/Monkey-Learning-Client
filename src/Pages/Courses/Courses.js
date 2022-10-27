@@ -11,7 +11,7 @@ const Courses = () => {
             <div className="courses-back">
                 <h1>Our Courses</h1>
             </div>
-            <div className='mx-2 py-16'>
+            <div className='mx-2 py-16 bg-gray-100'>
                 <div class="grid grid-cols-1 lg:grid-cols-7 gap-10">
                     <div class="lg:col-start-2 lg:col-end-3... "><AsideNav></AsideNav></div>
                     <div class="lg:col-start-3 lg:col-span-4 ...">

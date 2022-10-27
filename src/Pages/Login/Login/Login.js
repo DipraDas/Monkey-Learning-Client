@@ -6,7 +6,7 @@ import logo from '../../../assets/logo.png';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signIn, googleLogin } = useContext(AuthContext);
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -42,6 +42,15 @@ const Login = () => {
             })
             .catch(error => console.error('error', error))
     }
+    const handleGithubSignIn = () => {
+        githubLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                nevigate(from, { replace: true });
+            })
+            .catch(error => console.error('error', error))
+    }
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '60px' }} className="mt-16">
             <div className="card card-compact w-96 bg-base-100 shadow-xl  py-5">
@@ -60,7 +69,7 @@ const Login = () => {
                     </form>
                     <div className="googleGithub flex justify-between">
                         <div className='w-2/4 mr-2'><button onClick={handleGoogleSignIn} className="btn btn-outline btn-block mt-1"><FaGoogle style={{ fontSize: '20px' }}></FaGoogle></button></div>
-                        <div className='w-2/4 ml-2'><button className="btn btn-outline btn-block mt-1"> <FaGithub style={{ fontSize: '24px' }}></FaGithub></button></div>
+                        <div className='w-2/4 ml-2'><button onClick={handleGithubSignIn} className="btn btn-outline btn-block mt-1"> <FaGithub style={{ fontSize: '24px' }}></FaGithub></button></div>
                     </div>
                     <p>{error}</p>
                 </div>

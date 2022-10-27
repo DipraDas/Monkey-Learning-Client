@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaCertificate, FaChild, FaCrown, FaDollarSign } from "react-icons/fa";
 import { FaVideo } from "react-icons/fa";
 import { FaBusinessTime } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import './CourseDetails.css';
 import Pdf from "react-to-pdf";
 
@@ -14,7 +15,9 @@ const CourseDetails = () => {
     return (
         <div ref={ref} className="bg-gray-200">
             <div className="back">
-                <h1 style={{ fontSize: '70px', color: '#fff' }} className=''>Course: {title}</h1>
+                <h1 style={{ fontSize: '70px', color: '#fff' }}>Course: {title}<Pdf targetRef={ref} filename="Monkey_Learning.pdf">
+                    {({ toPdf }) => <FaDownload style={{fontSize: '30px'}} onClick={toPdf} className='ml-3'></FaDownload>}
+                </Pdf></h1>
             </div>
             <div className="container mx-auto py-10">
                 <figure><img className='mx-auto' src={image} alt="course" /></figure>
@@ -22,7 +25,7 @@ const CourseDetails = () => {
                     <h2 className='text-3xl font-medium text-gray-800 mb-3'>Description</h2>
                     <p className='text-justify tracking-wide text-lg  text-gray-600 leading-8'>{description}</p>
                     <div className='mx-auto text-center my-5'>
-                        <Link className='btn btn-success text-slate-50 ' to={`/premiumAccess/${_id}`}> Enroll Now</Link>
+                        <Link className='btn btn-primary text-slate-50 ' to={`/premiumAccess/${_id}`}>Get premium Access</Link>
                     </div>
                     <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 bg-gray-300 mt-5 p-6 rounded-lg">
                         <div className='pb-3'>
@@ -54,12 +57,12 @@ const CourseDetails = () => {
                 </div>
                 <div className='mx-auto text-center'>
                     <Pdf targetRef={ref} filename="Monkey_Learning.pdf">
-                        {({ toPdf }) => <button onClick={toPdf} className="btn btn-active btn-primary text-center">Download PDF</button>}
+                        {({ toPdf }) => <button onClick={toPdf} className="btn btn-active btn-primary text-center">Download PDF<FaDownload className='ml-3'></FaDownload></button>}
                     </Pdf>
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 
