@@ -1,0 +1,18 @@
+.animationP {
+    margin-left: 24px;
+    animation: anim 8s ease-in-out infinite;
+}
+
+@keyframes anim {
+    0% {
+        margin-left: 24px;
+    }
+
+    50% {
+        margin-left: 100px;
+    }
+
+    100% {
+        margin-left: 24px;
+    }
+}

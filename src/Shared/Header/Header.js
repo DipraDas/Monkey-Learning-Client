@@ -15,7 +15,7 @@ const Header = () => {
     }
     return (
         <div >
-            <div style={{ backgroundColor: '#000033' }} className="navbar bg-neutral text-neutral-content">
+            <div style={{ backgroundColor: '#000033' }} className="navbar bg-neutral text-neutral-content py-4" >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +39,7 @@ const Header = () => {
                         <li><Link to='/faq'>Faq</Link></li>
                     </ul>
                 </div>
-                <Toggle></Toggle>
+                {/* <Toggle></Toggle> */}
                 <div className="navbar-end">
                     {
                         user?.uid ?
