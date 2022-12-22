@@ -14,7 +14,7 @@ const QuizTopics = () => {
             <h1 className='text-center text-5xl tracking-wider'>QUIZ TOPICS</h1>
             <img className='mx-auto my-3' src={glass} alt="" />
             <p className='text-center text-gray-500'>We have a lot of opportunities for you. Come check them out</p>
-            <div className="container mx-auto grid grid-cols-3 gap-7 px-20 mt-10">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-7 px-20 mt-10">
                 <div className='flex items-center gap-5 justify-center'>
                     <div><img style={{ width: '70px' }} src={reactI} alt="" /></div>
                     <div>

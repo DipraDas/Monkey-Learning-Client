@@ -13,10 +13,10 @@ const Adventages = () => {
                 <h1 className='text-center text-5xl tracking-wider'>THE ADVANTAGES</h1>
                 <img className='mx-auto my-3' src={glass} alt="" />
                 <p className='text-center text-gray-500'>You must learn to be still in the midst of activity and to be vibrantly alive in repose.</p>
-                <div className='grid grid-cols-2 gap-10 px-20 py-16'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-3 md:px-20 py-16'>
                     <div className='flex gap-10'>
                         <div>
-                            <img style={{width: '120px'}} src={ai1} alt="" />
+                            <img style={{ width: '120px' }} src={ai1} alt="" />
                         </div>
                         <div>
                             <h1 className='font-semibold text-3xl mb-4'>You will learn all you need for a proffesional career</h1>
@@ -25,7 +25,7 @@ const Adventages = () => {
                     </div>
                     <div className='flex gap-10'>
                         <div>
-                            <img style={{width: '120px'}} src={ai2} alt="" />
+                            <img style={{ width: '120px' }} src={ai2} alt="" />
                         </div>
                         <div>
                             <h1 className='font-semibold text-3xl mb-4'>You will learn all you need for a proffesional career</h1>
@@ -34,7 +34,7 @@ const Adventages = () => {
                     </div>
                     <div className='flex gap-10'>
                         <div>
-                            <img style={{width: '120px'}} src={ai3} alt="" />
+                            <img style={{ width: '120px' }} src={ai3} alt="" />
                         </div>
                         <div>
                             <h1 className='font-semibold text-3xl mb-4'>You will learn all you need for a proffesional career</h1>
@@ -43,7 +43,7 @@ const Adventages = () => {
                     </div>
                     <div className='flex gap-10'>
                         <div>
-                            <img style={{width: '120px'}} src={ai4} alt="" />
+                            <img style={{ width: '120px' }} src={ai4} alt="" />
                         </div>
                         <div>
                             <h1 className='font-semibold text-3xl mb-4'>You will learn all you need for a proffesional career</h1>
